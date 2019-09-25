@@ -13,6 +13,12 @@ jsproxy_config({
   // 节点配置
   node_map: {
     // 该节点用于加载大体积的静态资源
+    'mysite': {
+      label: '当前站点',
+      lines: {
+        [location.host]: 1,
+      }
+    },
     'cfworker': {
       label: '',
       hidden: true,
@@ -25,7 +31,7 @@ jsproxy_config({
   /**
    * 默认节点
    */
-  node_default: 'cfworker',
+  node_default: 'mysite',
   // node_default: /jsproxy-demo\.\w+$/.test(location.host) ? 'demo-hk' : 'mysite',
 
   /**
